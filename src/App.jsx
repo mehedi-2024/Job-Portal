@@ -5,7 +5,7 @@ import Navbar from './Components/shareRoute/Navbar'
 function App() {
 
   return (
-    <div className='max-w-[1280px] bg-white mx-auto px-8'>
+    <div className='max-w-[1280px] bg-white mx-auto'>
       <Navbar />
       <Outlet />
     </div>

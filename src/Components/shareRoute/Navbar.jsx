@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import navLogo from '../../assets/icons/navLogo.png'
 import upArrow from '../../assets/icons/upArrow.svg'
-import menus from '../../assets/icons/menu.svg'
 
 const Navbar = () => {
     const [isShowFIndJob, setIsShowFIndJob] = useState(false)
@@ -15,8 +14,8 @@ const Navbar = () => {
         <div className='flex justify-between items-center'>
             {/* logo */}
             <div className='flex items-center'>
-                <img className='w-[72px] inline' src={navLogo} alt="Logo" />
-                <h4 className='-m-[8px]'>JobSearch</h4>
+                <img className='w-[4rem] inline' src={navLogo} alt="Logo" />
+                <h5 className='-m-[8px]'>JobSearch</h5>
             </div>
 
             {/* menu */}
