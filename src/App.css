@@ -1,0 +1,37 @@
+h1{
+    font-size: 72px;
+    font-weight: 700;
+}
+h2{
+    font-size: 60px;
+    font-weight: 700;
+}
+h3{
+    font-size: 48px;
+    font-weight: 700;
+}
+h4{
+    font-size: 32px;
+    font-weight: 700;
+}
+h5{
+    font-size: 24px;
+    font-weight: 700;
+}
+p{
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+a{
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+nav a,p{
+    padding: 8px 1rem;
+    margin: 1px;
+    border-radius: 5px;
+    font-size: 1.3rem;
+}
+nav a:hover, nav p:hover{
+    background: #000;
+}
