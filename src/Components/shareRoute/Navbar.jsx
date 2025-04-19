@@ -20,9 +20,9 @@ const Navbar = () => {
 
             {/* menu */}
             <div className='relative'>
-                <div onClick={() => setIsShowNav(!isShowNav)} className='mr-4 text-gray-700 cursor-pointer font-black text-4xl z-10'>{isShowNav ? <i class="fas fa-times"></i> : <i class="fas fa-bars"></i>}</div>
+                <div onClick={() => setIsShowNav(!isShowNav)} className='mr-8 mt-2 text-gray-700 cursor-pointer font-black text-4xl z-10'>{isShowNav ? <i class="fas fa-times"></i> : <i class="fas fa-bars"></i>}</div>
 
-                <nav className={`absolute right-0 duration-300 top-16 bg-gray-800 text-gray-200 shadow-xl rounded-lg   ${isShowNav ? 'w-[80vw] max-h-[85vh] p-6 overflow-auto' : 'w-0 h-0 p-0 overflow-hidden'}`}>
+                <nav className={`absolute right-0 duration-300 top-12 bg-gray-800 text-gray-200 shadow-xl rounded-l-lg   ${isShowNav ? 'w-[80vw] max-h-[90vh] p-6 overflow-auto' : 'w-0 h-0 p-0 overflow-hidden'}`}>
                     {/* Home  */}
                     <div className='flex hover:bg-black rounded-[8px]'>
                         <NavLink to={'/'}>Home</NavLink>
