@@ -1,11 +1,11 @@
 import { Outlet } from 'react-router-dom'
 import './App.css'
-import Navbar from './Components/shareRoute/Navbar'
+import Navbar from './Components/Navbar'
 
 function App() {
 
   return (
-    <div className='max-w-[1280px] bg-white mx-auto'>
+    <div className='mx-auto pt-16'>
       <Navbar />
       <Outlet />
     </div>
