@@ -4,15 +4,21 @@ import './index.css'
 import App from './App.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Signin from './authentication/Signin.jsx'
+import Auth from './authentication/Auth.jsx'
+import Signup from './authentication/Signup.jsx'
 
 const route = createBrowserRouter([
   {
     path: '/',
     element: <App />,
-    children:[
+    children: [
       {
         path: '/signin',
         element: <Signin />
+      },
+      {
+        path: '/signup',
+        element: <Signup />
       }
     ]
   }
@@ -20,6 +26,8 @@ const route = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={route} />
+    <Auth>
+      <RouterProvider router={route} />
+    </Auth>
   </StrictMode>,
 )
