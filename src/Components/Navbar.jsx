@@ -22,9 +22,9 @@ const Navbar = () => {
                 //     position: "",
                 //     autoClose: 2000,
                 // });
+                setIsOpenProfile(false)
                 setTimeout(() => {
                     navigate('/');
-                    setIsOpenProfile(false)
                 }, 2500);
             })
             .catch(err => {
@@ -35,9 +35,9 @@ const Navbar = () => {
             })
     }
     return (
-        <div className='w-full h-20 border-4 flex items-center p-4 md:p-7 justify-between fixed top-0 left-0 z-50 backdrop-blur-lg'>
+        <div className='w-full h-20 border flex items-center p-4 md:p-7 justify-between fixed top-0 left-0 z-50 backdrop-blur-lg'>
             <div>
-                <img src={navLogo} className='w-16 h-16' alt="" />
+                <img src={navLogo} className='w-14 h-14 md:w-16 md:h-16' alt="" />
             </div>
 
             {/* menu st */}
