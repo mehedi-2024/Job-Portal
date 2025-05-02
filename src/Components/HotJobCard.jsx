@@ -11,7 +11,7 @@ const HotJobCard = ({ job }) => {
   const { hasUser } = useContext(AuthContext)
   console.log(job)
   return (
-    <div className='border border-gray-400 rounded p-3 flex gap-5'>
+    <div className='border border-gray-400 rounded p-3 flex gap-5 py-8'>
       <div>
         <img src={job.company_logo} className='w-48' alt="" />
       </div>
