@@ -6,10 +6,12 @@ import { ToastContainer } from 'react-toastify'
 function App() {
 
   return (
-    <div className='mx-auto pt-16'>
+    <div className='mx-auto pt-16 bg-gray-50 min-h-screen'>
       <ToastContainer />
       <Navbar />
-      <Outlet />
+      <div className='max-w-7xl px-8 mx-auto'>
+        <Outlet />
+      </div>
     </div>
   )
 }

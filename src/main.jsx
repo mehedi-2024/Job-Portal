@@ -6,12 +6,17 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Signin from './authentication/Signin.jsx'
 import Auth from './authentication/Auth.jsx'
 import Signup from './authentication/Signup.jsx'
+import Home from './Pages/Home.jsx'
 
 const route = createBrowserRouter([
   {
     path: '/',
     element: <App />,
     children: [
+      {
+        path: '/',
+        element: <Home />
+      },
       {
         path: '/signin',
         element: <Signin />
