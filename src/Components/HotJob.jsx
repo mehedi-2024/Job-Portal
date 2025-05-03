@@ -16,7 +16,7 @@ const HotJob = () => {
 
     return (
         <div className='my-16'>
-            <h2 className='mb-6'>Hot Jobs for you</h2>
+            <h4 className='mb-6'>Hot Jobs for you</h4>
             <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4'>
                 {
                     hotJobs.map((job, index) => {
