@@ -9,7 +9,7 @@ function App() {
     <div className='mx-auto pt-16 bg-gray-50 min-h-screen'>
       <ToastContainer />
       <Navbar />
-      <div className='max-w-7xl px-2 mx-auto'>
+      <div className='max-w-7xl px-2 md:px-8 mx-auto'>
         <Outlet />
       </div>
     </div>
