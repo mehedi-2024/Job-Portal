@@ -22,7 +22,7 @@ const HotJobCard = ({ job }) => {
         <h5>Job type : {job.jobType}</h5>
         <h5>Salary : {job.salaryRange.min} - {job.salaryRange.max} <span className='uppercase'>{job.salaryRange.currency}</span></h5>
 
-        <div>
+        <div className='flex-grow flex items-end'>
           <motion.button
             className='px-12 py-1 mt-3 hover:text-white hover:bg-gray-800 rounded-full border duration-75 border-gray-500'
             whileTap={{scale:.95}}>{hasUser ? 'Apply' : 'Login to Apply'}</motion.button>

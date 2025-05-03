@@ -12,10 +12,10 @@ const Banner = () => {
   return (
     <div className=' py-8 lg:py-0 w-full min-h-[80vh] flex flex-col lg:flex-row gap-10 items-center rounded-lg'>
       <div className='text-center flex-1 lg:text-start lg:w-1/2'>
-        <h1>Find Your Dream Job Today</h1>
+        <h1 className='leading-[1.3]'>Find Your Dream Job Today</h1>
         <p className='text-[1.1rem] w-[85%] lg:w-full mx-auto'>Explore thousands of opportunities from top companies. Whether you're just starting out or looking to take the next big step in your career, we're here to help you succeed.</p>
 
-        <div className='flex items-center gap-4 bg-white py-2 pl-8 pr-2 rounded-full sm:w-[80%] md:w-[65%] lg:w-full mx-auto mt-10 border-[1px] border-gray-400'>
+        <div className='flex w-[90%] items-center gap-4 bg-white py-2 pl-8 pr-2 rounded-full sm:w-[80%] md:w-[65%] lg:w-full mx-auto mt-10 border-[1px] border-gray-400'>
           <FaMagnifyingGlass />
           <input type="text" className=' outline-none flex-grow' placeholder='Find Your Job' />
           <button className='btn btn-neutral rounded-full md:w-32'>Search</button>

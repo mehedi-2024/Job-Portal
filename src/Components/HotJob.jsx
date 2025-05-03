@@ -6,11 +6,13 @@ const HotJob = () => {
 
     const [jobs, setJobs] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/jobs')
+        fetch(' http://localhost:5000/jobs')
             .then(res => res.json())
             .then(data => setJobs(data))
     }, [])
     const hotJobs = jobs.slice(0, 6)
+
+    console.log(jobs)
 
     return (
         <div className='my-16'>
