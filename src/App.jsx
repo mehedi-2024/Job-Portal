@@ -2,6 +2,7 @@ import { Outlet } from 'react-router-dom'
 import './App.css'
 import Navbar from './Components/Navbar'
 import { ToastContainer } from 'react-toastify'
+import Footer from './Components/Footer'
 
 function App() {
 
@@ -12,6 +13,7 @@ function App() {
       <div className='max-w-7xl px-2 md:px-8 mx-auto'>
         <Outlet />
       </div>
+      <Footer />
     </div>
   )
 }

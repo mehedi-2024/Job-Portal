@@ -38,12 +38,20 @@ a {
     font-weight: 600;
 }
 
-#nav-sm a{
+#nav-sm>a {
     padding: 8px 50px;
     width: 100%;
     border-radius: 7px;
 }
-#nav-sm a:hover{
+
+#nav-sm>a:hover {
     color: white;
     background: #010615;
+}
+#nav-md>a:hover{
+    text-decoration: underline;
+}
+
+#nav a.active{
+    text-decoration: underline;
 }

@@ -1,15 +1,17 @@
 
 import Lottie from 'lottie-react'
 import signinAnimation from '../assets/lottie/animation.json'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { toast, ToastContainer } from 'react-toastify'
 import { useContext } from 'react'
 import { AuthContext } from './Auth'
 import { motion } from "motion/react"
 
-const Signin = () => {
+const Signin = ({ }) => {
 
-    const { signinWithPassword } = useContext(AuthContext)
+    const location = useLocation()
+    const { signinWithPassword, setLoading } = useContext(AuthContext)
+    const path = location.state || '/'
     const navigate = useNavigate()
 
     const handleLogin = e => {
@@ -27,8 +29,9 @@ const Signin = () => {
                     autoClose: 2000,
                 });
                 setTimeout(() => {
-                    navigate('/');
+                    navigate(path);
                 }, 2500);
+                setLoading(false)
             })
             .catch(err => {
                 toast.error('Invalied email or password', {
@@ -38,7 +41,7 @@ const Signin = () => {
             })
     }
     return (
-        <motion.div initial={{ opacity: 0, scale:.9 }} animate={{opacity:1, scale:1}} transition={{duration: 1}} className=''>
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }} className=''>
             <ToastContainer />
             <div className="hero mt-14">
                 <div className="hero-content flex-col lg:flex-row-reverse">
@@ -67,7 +70,7 @@ const Signin = () => {
                                 <div className="form-control mt-6">
                                     <button className="btn btn-info -mt-4">Login</button>
 
-                                    <p className='mt-3'>Don't have an account ? <Link className='text-sky-500 hover:underline' to='/signup'>Click here</Link></p>
+                                    <p className='mt-3'>Don't have an account ? <Link className='text-sky-500 hover:underline' state={path} to='/signup'>Click here</Link></p>
                                 </div>
                             </form>
                         </div>

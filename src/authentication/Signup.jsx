@@ -3,7 +3,7 @@
 import { useContext } from 'react'
 import google_icon from '../assets/icons/google-icon.png'
 import { toast, ToastContainer } from 'react-toastify'
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { AuthContext } from './Auth'
 
 
@@ -11,7 +11,8 @@ const Signup = () => {
 
     const navigate = useNavigate()
     const { signupWithGoogle, signupWithPassword } = useContext(AuthContext)
-
+    const location = useLocation()
+    const path = location.state || '/'
     const handleGoogleSignup = () => {
         signupWithGoogle()
             .then(result => {
@@ -20,7 +21,7 @@ const Signup = () => {
                     autoClose: 2000,
                 });
                 setTimeout(() => {
-                    navigate('/');
+                    navigate(path);
                 }, 2500);
             })
             .catch(err => {
@@ -45,7 +46,7 @@ const Signup = () => {
                     autoClose: 2000,
                 });
                 setTimeout(() => {
-                    navigate('/');
+                    navigate(path);
                 }, 2500);
             })
             .catch(err => {
