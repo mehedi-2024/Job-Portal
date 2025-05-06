@@ -18,10 +18,6 @@ const Navbar = () => {
     const handleSignOut = () => {
         signout()
             .then(result => {
-                // toast.success('Signup successful!', {
-                //     position: "",
-                //     autoClose: 2000,
-                // });
                 setIsOpenProfile(false)
                 setTimeout(() => {
                     navigate('/');

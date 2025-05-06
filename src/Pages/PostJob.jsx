@@ -1,16 +1,60 @@
 import React from 'react'
+import { toast, ToastContainer } from 'react-toastify'
 
 const PostJob = () => {
 
-  function handleChange(e) {
+  function handleSubmit(e) {
     e.preventDefault()
-    console.log(e.target.value)
+
+    const form = e.target
+    const formData = new FormData(form)
+    const enitialData = Object.fromEntries(formData)
+
+    const { min, max, currency, requirement, responsibilitie, ...data } = enitialData
+
+    const salaryRange = {
+      min,
+      max,
+      currency
+    }
+    const requirements = requirement.split(',')
+    const responsibilities = responsibilitie.split(',')
+    data.salaryRange = salaryRange
+    data.requirements = requirements
+    data.responsibilities = responsibilities
+
+    console.log(data)
+
+    fetch('https://job-portal-backend-ashy-seven.vercel.app/jobs', {
+      method: 'POST',
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(data)
+    })
+      .then(res => res.json())
+      .then(data => {
+        toast.success('Job post successful!', {
+          position: "bottom-left",
+          autoClose: 2000,
+        });
+        setTimeout(() => {
+          navigate('/allJobs');
+        }, 2500);
+      })
+      .catch(err => {
+        toast.error('Get an error', {
+          position: "bottom-left",
+          autoClose: 2000,
+        });
+      })
   }
   return (
     <div className='mt-4 min-h-96 py-4'>
+      <ToastContainer />
       <h3 className='text-center'>Give us your job details</h3>
       <div className='border border-gray-300 px-4 py-6'>
-        <form onChange={handleChange} className=''>
+        <form onSubmit={handleSubmit} className=''>
           <div className='grid gap-4 md:grid-cols-2 mb-6'>
             {/* Name */}
             <label className="w-full">
@@ -21,7 +65,7 @@ const PostJob = () => {
             {/* title */}
             <label className="w-full">
               <p className='opacity-75 font-semibold'>Job Title</p>
-              <input type="text" name='title' placeholder="Job title" className="input w-full " required />
+              <input type="text" name='title' placeholder="Software Engineer" className="input w-full " required />
             </label>
 
             {/* jobType */}
@@ -38,14 +82,14 @@ const PostJob = () => {
 
             {/* requirements */}
             <label className="w-full">
-              <p className='opacity-75 font-semibold'>Job Requirements</p>
-              <input type="text" name='requirements' placeholder="Job Requirements" className="input w-full " required />
+              <p className='opacity-75 font-semibold'>Job Requirements <span className='text-sm'>(if two or more must separate with ",")</span></p>
+              <input type="text" name='requirement' placeholder="Job Requirements" className="input w-full " required />
             </label>
 
             {/* responsibilities */}
             <label className="w-full">
-              <p className='opacity-75 font-semibold'>Responsibilities</p>
-              <input type="text" name='responsibilities' placeholder="Responsibilities" className="input w-full " required />
+              <p className='opacity-75 font-semibold'>Responsibilities <span className='text-sm'>(if two or more must separate with ",")</span></p>
+              <input type="text" name='responsibilitie' placeholder="Responsibilities" className="input w-full " required />
             </label>
 
             {/* status */}
@@ -74,7 +118,7 @@ const PostJob = () => {
 
             {/* location */}
             <label className="w-full">
-              <p className='opacity-75 font-semibold'>Location</p>
+              <p className='opacity-75 font-semibold'>Location<span className='text-sm'>(if two or more must separate with ",")</span></p>
               <input type="text" name='location' placeholder="Location" className="input w-full " required />
             </label>
 

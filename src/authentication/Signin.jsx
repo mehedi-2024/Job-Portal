@@ -10,7 +10,7 @@ import { motion } from "motion/react"
 const Signin = ({ }) => {
 
     const location = useLocation()
-    const { signinWithPassword, setLoading } = useContext(AuthContext)
+    const { signinWithPassword } = useContext(AuthContext)
     const path = location.state || '/'
     const navigate = useNavigate()
 
@@ -31,7 +31,6 @@ const Signin = ({ }) => {
                 setTimeout(() => {
                     navigate(path);
                 }, 2500);
-                setLoading(false)
             })
             .catch(err => {
                 toast.error('Invalied email or password', {
