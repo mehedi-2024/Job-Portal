@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { toast, ToastContainer } from 'react-toastify'
+import { AuthContext } from '../authentication/Auth'
 
 const PostJob = () => {
+
+  const {hasUser} = useContext(AuthContext)
 
   function handleSubmit(e) {
     e.preventDefault()
@@ -59,7 +62,7 @@ const PostJob = () => {
             {/* Name */}
             <label className="w-full">
               <p className='opacity-75 font-semibold'>Company Name</p>
-              <input type="text" name='companyName' placeholder="Company Name" className="input w-full " required />
+              <input type="text" name='company' placeholder="Company Name" className="input w-full " required />
             </label>
 
             {/* title */}
@@ -107,7 +110,7 @@ const PostJob = () => {
             {/* hr_email */}
             <label className="w-full">
               <p className='opacity-75 font-semibold'>HR Email</p>
-              <input type="email" name='hr_email' placeholder="HR Email" className="input w-full " required />
+              <input type="email" value={hasUser.email} name='hr_email' placeholder="HR Email" className="input w-full " required />
             </label>
 
             {/* description */}
@@ -125,7 +128,7 @@ const PostJob = () => {
             {/* company logo  */}
             <label className="w-full">
               <p className='opacity-75 font-semibold'>Company Logo URL</p>
-              <input type="url" name='logo' placeholder="Company Logo URL" className="input w-full " required />
+              <input type="url" name='company_logo' placeholder="Company Logo URL" className="input w-full " required />
             </label>
 
             {/* applicationDeadline */}

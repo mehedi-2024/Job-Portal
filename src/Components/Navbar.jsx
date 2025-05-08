@@ -62,7 +62,10 @@ const Navbar = () => {
             <div className='flex gap-4 items-center'>
                 {
                     !hasUser ? <button className='btn btn-info'><Link to={'/signin'}>Login</Link></button> : <div>
-                        <motion.button onClick={() => setIsOpenProfile(!isOpenProfile)} disabled={isOpenNav ? true : false} whileTap={{ scale: .9 }} whileHover={{ scale: 1.1 }} className="rounded-full mt-2">
+                        <motion.button onClick={() => {
+                            setIsOpenProfile(!isOpenProfile)
+                            setIsOpenNav(false)
+                        }} whileTap={{ scale: .9 }} whileHover={{ scale: 1.1 }} className="rounded-full mt-2">
                             <img src={'https://pinnacle.works/wp-content/uploads/2022/06/dummy-image.jpg'} className="w-12 h-12 cursor-pointer rounded-full" alt="" />
                         </motion.button>
 
@@ -74,10 +77,9 @@ const Navbar = () => {
                                 <p className="text-sm opacity-80">Web developer</p>
                             </div>
 
-                            <div className="w-full flex flex-col mb-4 text-start gap-2 bg-gray- p-8 px-2 rounded-sm border border-gray-300 shadow-md">
+                            <div className="w-full flex flex-col mb-4 text-start gap-2 bg-gray- p-8 px-2 rounded-sm border border-gray-200">
                                 <Link to='/postJob' className="py-1 pl-8 rounded w-full border border-transparent hover:border-gray-300 hover:bg-gray-100 active:scale-95 bg-transparent">Post a Job</Link>
-                                <Link className="py-1 pl-8 rounded w-full border border-transparent hover:border-gray-300 hover:bg-gray-100 active:scale-95 bg-transparent">All Posted Jobs</Link>
-                                <Link className="py-1 pl-8 rounded w-full border border-transparent hover:border-gray-300 hover:bg-gray-100 active:scale-95 bg-transparent">All Job Applications</Link>
+                                <Link to={'/myPostedJobs'} className="py-1 pl-8 rounded w-full border border-transparent hover:border-gray-300 hover:bg-gray-100 active:scale-95 bg-transparent">All Posted Jobs</Link>
                             </div>
 
                             <button onClick={handleSignOut} className="btn w-full btn-neutral flex items-center gap-4"><GoSignOut size={22} /> Sign Out</button>
@@ -88,7 +90,10 @@ const Navbar = () => {
 
 
 
-                <motion.button onClick={() => setIsOpenNav(!isOpenNav)} whileTap={{ scale: .7 }} whileHover={{ scale: 1.1 }} disabled={isOpenProfile ? true : false}><img className={`w-12 md:hidden cursor-pointer`} src={isOpenNav ? closeLogo : barLogo} alt="" /></motion.button>
+                <motion.button onClick={() => {
+                    setIsOpenNav(!isOpenNav)
+                    setIsOpenProfile(false)
+                }} whileTap={{ scale: .7 }} whileHover={{ scale: 1.1 }}><img className={`w-12 md:hidden cursor-pointer`} src={isOpenNav ? closeLogo : barLogo} alt="" /></motion.button>
 
             </div>
         </div>

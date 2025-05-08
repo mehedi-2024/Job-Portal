@@ -30,7 +30,7 @@ const JobApply = () => {
 
     console.log(newApplication)
 
-    fetch('https://job-portal-backend-ashy-seven.vercel.app/jobsApplication', {
+    fetch('https://job-portal-backend-ashy-seven.vercel.app/jobApplication', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
