@@ -8,7 +8,7 @@ const MyPostedJob = () => {
 
     const [datas, setDatas] = useState([])
     useEffect(() => {
-        fetch(`http://localhost:5000/jobs?email=${hasUser.email}`)
+        fetch(`https://job-portal-backend-ashy-seven.vercel.app/jobs?email=${hasUser.email}`)
             .then(res => res.json())
             .then(data => {
                 if (data) {

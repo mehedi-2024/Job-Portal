@@ -31,7 +31,7 @@ const EditPostedJob = () => {
 
         console.log(data)
 
-        fetch(`http://localhost:5000/jobs/${jobId}`, {
+        fetch(`https://job-portal-backend-ashy-seven.vercel.app/jobs/${jobId}`, {
             method: 'PATCH',
             headers: {
                 "content-type": "application/json",

@@ -10,7 +10,7 @@ const MyPosetdJobDetails = () => {
     const [application, setApplication] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/jojobApplication/${jobId}`)
+        fetch(`https://job-portal-backend-ashy-seven.vercel.app/jojobApplication/${jobId}`)
             .then(res => res.json())
             .then(data => setApplication(data))
             .then(err => console.log(err))
@@ -21,7 +21,7 @@ const MyPosetdJobDetails = () => {
 
     const handleDeleteJob = () => {
         if (confirm('Are you want to delete this job ?')) {
-            fetch(`http://localhost:5000/jobs/${jobId}`, {
+            fetch(`https://job-portal-backend-ashy-seven.vercel.app/jobs/${jobId}`, {
                 method: 'DELETE',
             })
                 .then(res => res.json())

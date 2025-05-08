@@ -53,12 +53,12 @@ const route = createBrowserRouter([
       {
         path: '/myPostedJobs/details/:id',
         element: <PrivateRoute><MyPosetdJobDetails /></PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/jobs/${params.id}`)
+        loader: ({params}) => fetch(`https://job-portal-backend-ashy-seven.vercel.app/jobs/${params.id}`)
       },
       {
         path: '/myPostedJobs/edit/:id',
         element: <PrivateRoute><EditPostedJob /></PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/jobs/${params.id}`)
+        loader: ({params}) => fetch(`https://job-portal-backend-ashy-seven.vercel.app/jobs/${params.id}`)
       }
     ]
   }
