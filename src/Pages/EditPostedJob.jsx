@@ -40,7 +40,7 @@ const EditPostedJob = () => {
         })
             .then(res => res.json())
             .then(data => {
-                toast.success('Job post successful!', {
+                toast.success('Job update successful!', {
                     position: "bottom-left",
                     autoClose: 2000,
                 });
@@ -163,7 +163,7 @@ const EditPostedJob = () => {
                         </div>
                     </div>
 
-                    <button type='submit' className='btn btn-neutral w-full'>Submit</button>
+                    <button type='submit' className='btn btn-neutral w-full'>Update</button>
                 </form>
             </div>
         </div>

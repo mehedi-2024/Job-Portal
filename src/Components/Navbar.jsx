@@ -1,5 +1,5 @@
 import { motion } from "motion/react"
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 import navLogo from '../assets/icons/job.png'
 import barLogo from '../assets/icons/menu.svg'
 import closeLogo from '../assets/icons/close.svg'
@@ -11,14 +11,19 @@ import { toast, ToastContainer } from "react-toastify"
 const Navbar = () => {
 
     const { hasUser, signout } = useContext(AuthContext)
-
+    const navigate = useNavigate()
     const [isOpenNav, setIsOpenNav] = useState(false)
     const [isOpenProfile, setIsOpenProfile] = useState(false)
+    console.log(hasUser)
 
     const handleSignOut = () => {
         signout()
             .then(result => {
                 setIsOpenProfile(false)
+                toast.success('Login successful!', {
+                    position: "bottom-left",
+                    autoClose: 2000,
+                });
                 setTimeout(() => {
                     navigate('/');
                 }, 2500);
@@ -34,6 +39,7 @@ const Navbar = () => {
     return (
         <div className='w-full h-20 border flex items-center p-4 md:p-7 justify-between fixed top-0 left-0 z-50 backdrop-blur-lg'>
             <div>
+                <ToastContainer />
                 <img src={navLogo} className='w-14 h-14 md:w-16 md:h-16' alt="" />
             </div>
 

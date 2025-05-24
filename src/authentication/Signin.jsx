@@ -6,6 +6,7 @@ import { toast, ToastContainer } from 'react-toastify'
 import { useContext } from 'react'
 import { AuthContext } from './Auth'
 import { motion } from "motion/react"
+import axios from 'axios'
 
 const Signin = ({ }) => {
 
@@ -20,17 +21,20 @@ const Signin = ({ }) => {
         const email = e.target.email.value
         const password = e.target.password.value
 
-        console.log(email, password)
-
+        const user = { email }
         signinWithPassword(email, password)
             .then(result => {
-                toast.success('Login successful!', {
-                    position: "bottom-left",
-                    autoClose: 2000,
-                });
-                setTimeout(() => {
-                    navigate(path);
-                }, 2500);
+                axios.post('http://localhost:5000/jwt', user, { withCredentials: true })
+                    .then(res => {
+                        console.log(res.data)
+                        toast.success('Login successful!', {
+                            position: "bottom-left",
+                            autoClose: 2000,
+                        });
+                        setTimeout(() => {
+                            navigate(path);
+                        }, 2500);
+                    })
             })
             .catch(err => {
                 toast.error('Invalied email or password', {

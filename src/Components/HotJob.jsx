@@ -1,16 +1,19 @@
 
 import React, { useEffect, useState } from 'react'
 import HotJobCard from './HotJobCard'
+import axios from 'axios'
 
 const HotJob = () => {
 
     const [jobs, setJobs] = useState([])
     useEffect(() => {
-        fetch(' https://job-portal-backend-ashy-seven.vercel.app/jobs')
-            .then(res => res.json())
-            .then(data => setJobs(data))
+
+        axios.get('http://localhost:5000/allJobs', { withCredentials: true })
+            .then(res => setJobs(res.data))
+            .catch(err => console.log(err))
+
     }, [])
-    const hotJobs = jobs.slice(0, 6)
+    const hotJobs = jobs?.slice(0, 6)
 
     // console.log(jobs)
 
@@ -19,7 +22,7 @@ const HotJob = () => {
             <h3 className='mb-6 text-center'>Hot Jobs for you</h3>
             <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4'>
                 {
-                    hotJobs.map((job, index) => {
+                    hotJobs?.map((job, index) => {
                         return <HotJobCard job={job} key={index} />
                     })
                 }

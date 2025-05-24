@@ -1,10 +1,12 @@
 import React, { useContext } from 'react'
 import { toast, ToastContainer } from 'react-toastify'
 import { AuthContext } from '../authentication/Auth'
+import { useNavigate } from 'react-router-dom'
 
 const PostJob = () => {
 
   const {hasUser} = useContext(AuthContext)
+  const navigate = useNavigate()
 
   function handleSubmit(e) {
     e.preventDefault()
@@ -42,7 +44,7 @@ const PostJob = () => {
           autoClose: 2000,
         });
         setTimeout(() => {
-          navigate('/allJobs');
+          navigate('/myPostedJobs');
         }, 2500);
       })
       .catch(err => {

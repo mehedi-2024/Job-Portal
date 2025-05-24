@@ -2,22 +2,17 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { AuthContext } from '../authentication/Auth'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 
 const MyPostedJob = () => {
     const { hasUser } = useContext(AuthContext)
 
     const [datas, setDatas] = useState([])
     useEffect(() => {
-        fetch(`https://job-portal-backend-ashy-seven.vercel.app/jobs?email=${hasUser.email}`)
-            .then(res => res.json())
-            .then(data => {
-                if (data) {
-                    setDatas(data)
-                }
-            })
+        axios.get(`http://localhost:5000/jobs?email=${hasUser.email}`,{withCredentials: true})
+            .then(res => setDatas(res.data))
             .catch(err => console.log(err))
     }, [])
-    console.log(datas)
 
     return (
         <div className='mt-4 pt-5 min-h-[100vh]'>

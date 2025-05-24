@@ -17,7 +17,23 @@ const MyPosetdJobDetails = () => {
     }, [])
 
     const jobData = useLoaderData()
-    console.log(application)
+
+    const handleStatus = (e, id) => {
+        const data = {
+            status: e.target.value
+        }
+        console.log(e.target.value, id)
+        fetch(`http://localhost:5000/jojobApplication?id=${id}`, {
+            method: 'PATCH',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(data => console.log(data))
+            .then(err => console.log(err))
+    }
 
     const handleDeleteJob = () => {
         if (confirm('Are you want to delete this job ?')) {
@@ -68,7 +84,8 @@ const MyPosetdJobDetails = () => {
                                 <tr>
                                     <th></th>
                                     <th>Name</th>
-                                    <th>Job</th>
+                                    <th>Details</th>
+                                    <th>Stasus</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -82,6 +99,13 @@ const MyPosetdJobDetails = () => {
                                                 <p>Github : {applicationData.github}</p>
                                                 <p>LinkedIn : {applicationData.linkedIn}</p>
                                                 <p>Resume : {applicationData.resume}</p>
+                                            </td>
+                                            <td>
+                                                <select onChange={e => handleStatus(e, applicationData._id)} className="select select-bordered select-sm w-full max-w-xs">
+                                                    <option>On view</option>
+                                                    <option>Hired</option>
+                                                    <option>Rejected</option>
+                                                </select>
                                             </td>
                                         </tr>
                                     })
