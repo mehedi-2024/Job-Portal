@@ -11,7 +11,7 @@ const AllJobs = () => {
   const [isDataLoading, setIsDataLoading] = useState(true)
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/allJobs?title=${jobTitle}`, {
+    axios.get(`https://job-portal-backend-ashy-seven.vercel.app/allJobs?title=${jobTitle}`, {
       withCredentials: true
     })
       .then(res => {

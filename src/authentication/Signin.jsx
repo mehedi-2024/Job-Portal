@@ -24,7 +24,7 @@ const Signin = ({ }) => {
         const user = { email }
         signinWithPassword(email, password)
             .then(result => {
-                axios.post('http://localhost:5000/jwt', user, { withCredentials: true })
+                axios.post('https://job-portal-backend-ashy-seven.vercel.app/jwt', user, { withCredentials: true })
                     .then(res => {
                         console.log(res.data)
                         toast.success('Login successful!', {

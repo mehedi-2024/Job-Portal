@@ -23,7 +23,7 @@ const MyPosetdJobDetails = () => {
             status: e.target.value
         }
         console.log(e.target.value, id)
-        fetch(`http://localhost:5000/jojobApplication?id=${id}`, {
+        fetch(`https://job-portal-backend-ashy-seven.vercel.app/jojobApplication?id=${id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'

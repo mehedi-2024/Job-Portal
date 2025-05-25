@@ -35,13 +35,13 @@ const Auth = ({ children }) => {
             if (user) {
                 setHasUser(user)
                 setLoading(false)
-                axios.post('http://localhost:5000/jwt', { email: user.email }, { withCredentials: true })
+                axios.post('https://job-portal-backend-ashy-seven.vercel.app/jwt', { email: user.email }, { withCredentials: true })
                     .then(res => console.log(res.data))
                     .then(err => console.log(err))
             } else {
                 setHasUser(user)
                 setLoading(false)
-                axios.post('http://localhost:5000/logOut', {}, { withCredentials: true })
+                axios.post('https://job-portal-backend-ashy-seven.vercel.app/logOut', {}, { withCredentials: true })
                     .then(res => console.log(res.data))
                     .then(err => console.log(err))
             }

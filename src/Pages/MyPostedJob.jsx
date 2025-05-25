@@ -9,7 +9,7 @@ const MyPostedJob = () => {
 
     const [datas, setDatas] = useState([])
     useEffect(() => {
-        axios.get(`http://localhost:5000/jobs?email=${hasUser.email}`,{withCredentials: true})
+        axios.get(`https://job-portal-backend-ashy-seven.vercel.app/jobs?email=${hasUser.email}`,{withCredentials: true})
             .then(res => setDatas(res.data))
             .catch(err => console.log(err))
     }, [])
