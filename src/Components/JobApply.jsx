@@ -71,7 +71,7 @@ const JobApply = () => {
           <h5>Category : {job.category}</h5>
           <h5>Deadline : {job.applicationDeadline}</h5>
           <h5>Job type : {job.jobType}</h5>
-          <h5>Salary : {job.salaryRange.min} - {job.salaryRange.max} <span className='uppercase'>{job.salaryRange.currency}</span></h5>
+          <h5>Salary : {job.salaryRange?.min} - {job.salaryRange?.max} <span className='uppercase'>{job.salaryRange?.currency}</span></h5>
         </div>
       </div>
       {/* job apply  */}

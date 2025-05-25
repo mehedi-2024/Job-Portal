@@ -89,7 +89,7 @@ const EditPostedJob = () => {
                         {/* requirements */}
                         <label className="w-full">
                             <p className='opacity-75 font-semibold'>Job Requirements <span className='text-sm'>(if two or more must separate with ",")</span></p>
-                            <input type="text" name='requirement' defaultValue={jobData.requirements.join(',')} placeholder="Job Requirements" className="input w-full " required />
+                            <input type="text" name='requirement' defaultValue={jobData.requirements?.join(',')} placeholder="Job Requirements" className="input w-full " required />
                         </label>
 
                         {/* responsibilities */}
