@@ -8,7 +8,7 @@ const HotJob = () => {
     const [jobs, setJobs] = useState([])
     useEffect(() => {
 
-        axios.get('https://job-portal-backend-ashy-seven.vercel.app/allJobs', { withCredentials: true })
+        axios.get('https://job-portal-backend-ashy-seven.vercel.app/allJobs')
             .then(res => setJobs(res.data))
             .catch(err => console.log(err))
 

@@ -40,7 +40,6 @@ const route = createBrowserRouter([
       {
         path: '/allJobs',
         element: <AllJobs />,
-        loader: () => fetch('https://job-portal-backend-ashy-seven.vercel.app/jobs')
       },
       {
         path: '/postJob',

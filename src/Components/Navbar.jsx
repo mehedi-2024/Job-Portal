@@ -20,13 +20,10 @@ const Navbar = () => {
         signout()
             .then(result => {
                 setIsOpenProfile(false)
-                toast.success('Login successful!', {
-                    position: "bottom-left",
-                    autoClose: 2000,
-                });
+                
                 setTimeout(() => {
                     navigate('/');
-                }, 2500);
+                }, 1);
             })
             .catch(err => {
                 toast.error('Unexpected reference error', {
