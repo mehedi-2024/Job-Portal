@@ -53,7 +53,7 @@ const AllJobs = () => {
             </select>
           </div>
           <div className='flex items-center gap-3'>
-            <h5 className='flex-grow'>Salary : </h5>
+            <h5 className='flex-grow'>Min Salary : </h5>
             <select className="select select-md max-w-48">
               <option>Any</option>
               <option>10000 BDT</option>
@@ -88,8 +88,8 @@ const AllJobs = () => {
               return <HotJobCard job={job} key={index} />
             }) : <h4 className='text-center mt-28 w-full'>No job available</h4>
           ) : (
-            <div className='grid grid-cols-3 gap-2'>
-              <div className="flex w-52 flex-col gap-4">
+            <div className='grid md:grid-cols-2 xl:grid-cols-3 gap-2 '>
+              <div className="flex mx-auto w-[80%] flex-col gap-4">
                 <div className="flex items-center gap-4">
                   <div className="skeleton h-16 w-16 shrink-0 rounded-full"></div>
                   <div className="flex flex-col gap-4">
@@ -99,7 +99,7 @@ const AllJobs = () => {
                 </div>
                 <div className="skeleton h-32 w-full"></div>
               </div>
-              <div className="flex w-52 flex-col gap-4">
+              <div className="flex mx-auto w-[80%] flex-col gap-4">
                 <div className="flex items-center gap-4">
                   <div className="skeleton h-16 w-16 shrink-0 rounded-full"></div>
                   <div className="flex flex-col gap-4">
@@ -109,7 +109,7 @@ const AllJobs = () => {
                 </div>
                 <div className="skeleton h-32 w-full"></div>
               </div>
-              <div className="flex w-52 flex-col gap-4">
+              <div className="flex mx-auto w-[80%] flex-col gap-4">
                 <div className="flex items-center gap-4">
                   <div className="skeleton h-16 w-16 shrink-0 rounded-full"></div>
                   <div className="flex flex-col gap-4">
@@ -119,7 +119,7 @@ const AllJobs = () => {
                 </div>
                 <div className="skeleton h-32 w-full"></div>
               </div>
-              <div className="flex w-52 flex-col gap-4">
+              <div className="flex mx-auto w-[80%] flex-col gap-4">
                 <div className="flex items-center gap-4">
                   <div className="skeleton h-16 w-16 shrink-0 rounded-full"></div>
                   <div className="flex flex-col gap-4">
@@ -129,7 +129,7 @@ const AllJobs = () => {
                 </div>
                 <div className="skeleton h-32 w-full"></div>
               </div>
-              <div className="flex w-52 flex-col gap-4">
+              <div className="flex mx-auto w-[80%] flex-col gap-4">
                 <div className="flex items-center gap-4">
                   <div className="skeleton h-16 w-16 shrink-0 rounded-full"></div>
                   <div className="flex flex-col gap-4">
@@ -139,7 +139,7 @@ const AllJobs = () => {
                 </div>
                 <div className="skeleton h-32 w-full"></div>
               </div>
-              <div className="flex w-52 flex-col gap-4">
+              <div className="flex mx-auto w-[80%] flex-col gap-4">
                 <div className="flex items-center gap-4">
                   <div className="skeleton h-16 w-16 shrink-0 rounded-full"></div>
                   <div className="flex flex-col gap-4">

@@ -14,6 +14,9 @@ import PostJob from './Pages/PostJob.jsx'
 import MyPostedJob from './Pages/MyPostedJob.jsx'
 import MyPosetdJobDetails from './Pages/MyPosetdJobDetails.jsx'
 import EditPostedJob from './Pages/EditPostedJob.jsx'
+import AboutUs from './Pages/AboutUs.jsx'
+import ContactUs from './Pages/ContactUs.jsx'
+import BlogPage from './Pages/BlogPage.jsx'
 
 const route = createBrowserRouter([
   {
@@ -58,6 +61,18 @@ const route = createBrowserRouter([
         path: '/myPostedJobs/edit/:id',
         element: <PrivateRoute><EditPostedJob /></PrivateRoute>,
         loader: ({params}) => fetch(`https://job-portal-backend-ashy-seven.vercel.app/jobs/${params.id}`)
+      },
+      {
+        path: '/aboutUs',
+        element: <AboutUs />
+      },
+      {
+        path: '/contact',
+        element: <ContactUs />
+      },
+      {
+        path: '/blog',
+        element: <BlogPage />
       }
     ]
   }
